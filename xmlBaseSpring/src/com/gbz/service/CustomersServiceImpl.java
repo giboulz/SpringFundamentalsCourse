@@ -4,14 +4,27 @@ import java.util.List;
 
 import com.gbz.model.Customer;
 import com.gbz.repository.CustomerRepository;
-import com.gbz.repository.HibernateCustomerRepositoryImpl;
 
 public class CustomersServiceImpl implements CustomerService {
 
-	private CustomerRepository customerRepo = new HibernateCustomerRepositoryImpl(); 
+	private CustomerRepository customerRepo ; 
 	
+
+	public void setCustomerRepo(CustomerRepository customerRepo) {
+		this.customerRepo = customerRepo;
+	}
+
 	public List<Customer> findAll(){
 		return customerRepo.findAll(); 
 	}
+	/*
+	public CustomersServiceImpl(){
+		
+	}*/
+	/*
+	public CustomersServiceImpl(CustomerRepository customerRepository){
+		this.customerRepo = customerRepository; 
+		
+	}*/
 	
 }
