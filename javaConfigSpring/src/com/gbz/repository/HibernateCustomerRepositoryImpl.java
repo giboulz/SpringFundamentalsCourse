@@ -3,10 +3,14 @@ package com.gbz.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gbz.model.*;
+import org.springframework.beans.factory.annotation.Value;
+
+import com.gbz.model.Customer;
 
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
+	@Value("${someProperty}")
+	private String someVariable;
 	
 	/* (non-Javadoc)
 	 * @see com.gbz.repository.CustomerRepository#findAll()
@@ -17,7 +21,7 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 		List<Customer> customers = new ArrayList<Customer>(); 
 		
 		Customer c = new Customer(); 
-		c.setFirstName("Jean");
+		c.setFirstName("Jean "+someVariable);
 		c.setLastName("albert");
 		
 		customers.add(c); 
