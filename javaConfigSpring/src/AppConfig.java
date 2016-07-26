@@ -1,6 +1,7 @@
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import com.gbz.repository.CustomerRepository;
 import com.gbz.repository.HibernateCustomerRepositoryImpl;
@@ -9,6 +10,7 @@ import com.gbz.service.CustomersServiceImpl;
 
 @Configuration
 @ComponentScan({"com.gbz"})
+@Scope("singleton")
 public class AppConfig {
 
 	@Bean(name="customerService")

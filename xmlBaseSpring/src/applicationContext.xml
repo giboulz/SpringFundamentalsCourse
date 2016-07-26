@@ -7,7 +7,7 @@
 
 	<bean name="customerRepository" class="com.gbz.repository.HibernateCustomerRepositoryImpl"/>
 
-	<bean name="customerService" class="com.gbz.service.CustomersServiceImpl" autowire="byType">
+	<bean name="customerService" class="com.gbz.service.CustomersServiceImpl" autowire="byType" scope="singleton">
 <!-- 		<constructor-arg index="0" ref="customerRepository" /> --> 
 		<!-- <property name="customerRepo" ref="customerRepository"></property> -->
 	</bean>
