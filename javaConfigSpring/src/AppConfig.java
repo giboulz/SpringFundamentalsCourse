@@ -37,6 +37,8 @@ public class AppConfig {
 		return new HibernateCustomerRepositoryImpl(); 
 	}
 	
+	
+	//placer en static pour qu'on soit sur que cela s'exucute avant le reste.
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer(){
 		return new PropertySourcesPlaceholderConfigurer(); 
